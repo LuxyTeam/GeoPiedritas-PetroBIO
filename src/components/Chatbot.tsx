@@ -29,27 +29,6 @@ interface ChatbotProps {
   onToggle?: () => void
 }
 
-// --- Datos Simulados (Knowledge Base) ---
-const KNOWLEDGE_BASE = {
-  diagenesis: {
-    title: "Diagénesis",
-    text: "La diagénesis es el proceso físico y químico que transforma los sedimentos en roca sedimentaria (litificación) a temperaturas y presiones bajas."
-  },
-  rocas: {
-    title: "Clasificación",
-    text: "Las rocas sedimentarias se dividen en tres grandes grupos: \n1. **Detríticas** (ej. Arenisca)\n2. **Químicas** (ej. Caliza)\n3. **Orgánicas** (ej. Carbón)"
-  },
-  fosiles: {
-    title: "Fósiles",
-    text: "Son restos o señales de actividad de organismos pasados. Son vitales para la datación relativa y para entender paleoambientes."
-  },
-  estratos: {
-    title: "Estratificación",
-    text: "Es la disposición en capas paralelas de las rocas sedimentarias. Cada capa representa un periodo de deposición específico."
-  },
-  default: "¡Interesante pregunta! Como GeoBot, mi especialidad son las rocas sedimentarias. ¿Te gustaría saber sobre su *clasificación*, *diagénesis* o *fósiles*?"
-}
-
 export default function GeoBot({ primaryColor = '#d97706', isOpen: externalIsOpen, onToggle: externalOnToggle }: ChatbotProps) {
   // --- Estados ---
   // Usar estado externo si se proporciona, sino usar estado interno
@@ -84,27 +63,26 @@ export default function GeoBot({ primaryColor = '#d97706', isOpen: externalIsOpe
     }
   }, [isOpen])
 
-  useEffect(() => {
-    // Focus en el input cuando se abre el chat
-    if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 300)
-    }
-  }, [isOpen])
-
   // --- Lógica del Bot ---
-  const generateResponse = (text: string) => {
-    const lowerText = text.toLowerCase()
-
-    // Simular retraso de red y "pensamiento"
+  const generateResponse = async (text: string) => {
     setIsTyping(true)
 
-    setTimeout(() => {
-      let responseText = KNOWLEDGE_BASE.default
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: text }),
+      })
 
-      if (lowerText.includes('diagénesis') || lowerText.includes('diagenesis')) responseText = KNOWLEDGE_BASE.diagenesis.text
-      else if (lowerText.includes('roca') || lowerText.includes('tipo') || lowerText.includes('clasifi')) responseText = KNOWLEDGE_BASE.rocas.text
-      else if (lowerText.includes('fósil') || lowerText.includes('fosil')) responseText = KNOWLEDGE_BASE.fosiles.text
-      else if (lowerText.includes('estrato') || lowerText.includes('capa')) responseText = KNOWLEDGE_BASE.estratos.text
+      const data = await response.json()
+
+      let responseText = "Lo siento, tuve un problema geológico interno. ¿Podrías intentar de nuevo? 🌋"
+
+      if (response.ok && data.text) {
+        responseText = data.text
+      }
 
       const newMessage: Message = {
         id: Date.now(),
@@ -114,8 +92,18 @@ export default function GeoBot({ primaryColor = '#d97706', isOpen: externalIsOpe
       }
 
       setMessages(prev => [...prev, newMessage])
+    } catch (error) {
+      console.error('Error fetching chat response:', error)
+      const errorMessage: Message = {
+        id: Date.now(),
+        text: "Parece que perdí la conexión con el núcleo. Intenta más tarde. 🔌",
+        sender: 'bot',
+        timestamp: new Date()
+      }
+      setMessages(prev => [...prev, errorMessage])
+    } finally {
       setIsTyping(false)
-    }, 1500 + Math.random() * 500) // Tiempo variable para realismo
+    }
   }
 
   // Pequeña utilidad para convertir **texto** en negritas

@@ -1,21 +1,20 @@
 'use client'
 
-import { useEffect, useRef, useState, useCallback } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { ChemicalCompound } from '@/types'
 
-// Carga dinámica del componente 3D para mejorar el rendimiento inicial
-const SimpleMineral3D = dynamic(() => import('./SimpleMineral3D'), {
+// Importar el modal universal
+const UniversalModal = dynamic(() => import('./UniversalModal'), {
   loading: () => (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-2xl p-8 flex flex-col items-center">
         <div className="w-10 h-10 border-4 border-ocre-base border-t-transparent rounded-full animate-spin mb-4"></div>
-        <p className="text-brown-base font-bold">Cargando motor 3D...</p>
+        <p className="text-brown-base font-bold">Cargando...</p>
       </div>
     </div>
   ),
-  ssr: false // No renderizar en servidor ya que usa window/canvas
+  ssr: false
 })
 
 // Datos de compuestos químicos importantes
@@ -117,11 +116,8 @@ const categoryColors: Record<string, string> = {
 }
 
 export default function Compounds3D() {
-  const router = useRouter()
-  // Aunque visualmente ya no se marca, mantenemos el estado por si la lógica lo requiere en el futuro
   const [selectedCompound, setSelectedCompound] = useState<ChemicalCompound>(compounds[0])
-  const [show3DModel, setShow3DModel] = useState(false)
-  const [selected3DCompound, setSelected3DCompound] = useState<ChemicalCompound | null>(null)
+  const [selectedModalCompound, setSelectedModalCompound] = useState<ChemicalCompound | null>(null)
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -130,7 +126,6 @@ export default function Compounds3D() {
         {compounds.map((compound, index) => (
           <div
             key={compound.id}
-            // MODIFICACIÓN: Se eliminó la lógica condicional del ring (borde) de selección
             className="group cursor-pointer transition-all duration-300 hover:scale-[1.02]"
             onClick={() => setSelectedCompound(compound)}
             style={{ animationDelay: `${index * 100}ms` }}
@@ -181,17 +176,8 @@ export default function Compounds3D() {
                 {/* Botón de ver modelo 3D */}
                 <button
                   onClick={() => {
-                    if (compound.formula === 'SiO₂') {
-                      // Redirección al modelo 3D avanzado de SiO2
-                      router.push('/sio2-model')
-                    } else if (compound.formula === 'CaCO₃') {
-                      // Redirección al modelo 3D avanzado de Calcita
-                      router.push('/calcite-model')
-                    } else {
-                      // Usar modelo simple para otros compuestos
-                      setSelected3DCompound(compound)
-                      setShow3DModel(true)
-                    }
+                    // Abrir modal universal para todos
+                    setSelectedModalCompound(compound)
                   }}
                   className="w-full mt-6 bg-gradient-to-r from-ocre-base to-ocre-dark text-white py-3 px-4 rounded-2xl font-semibold text-sm hover:from-ocre-dark hover:to-ocre-base transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
@@ -204,19 +190,14 @@ export default function Compounds3D() {
         ))}
       </div>
 
-      {/* Modal para visualización 3D simple */}
-      {show3DModel && (
-        <SimpleMineral3D
-          compound={selected3DCompound || compounds[0]}
-          isOpen={show3DModel}
-          onClose={() => {
-            setShow3DModel(false)
-            setSelected3DCompound(null)
-          }}
+      {/* Modal Universal Único */}
+      {selectedModalCompound && (
+        <UniversalModal
+          isOpen={!!selectedModalCompound}
+          onClose={() => setSelectedModalCompound(null)}
+          compound={selectedModalCompound}
         />
       )}
-
-      {/* Nota: El modelo 3D avanzado de SiO₂ ahora se abre en página separada */}
     </div>
   )
 }

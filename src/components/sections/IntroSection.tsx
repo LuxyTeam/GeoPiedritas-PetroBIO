@@ -23,7 +23,7 @@ export default function IntroSection() {
                 <div className="lg:col-span-5 order-1 lg:order-1">
                     <div className="relative group w-full h-64 sm:h-80 lg:h-[400px] xl:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                         <img
-                            src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=800&fit=crop&crop=center"
+                            src="/images/estratificacion-rocas.jpg"
                             alt="Estratos de Roca Sedimentaria"
                             className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                             onError={(e) => {

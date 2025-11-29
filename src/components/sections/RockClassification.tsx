@@ -15,7 +15,7 @@ export default function RockClassification() {
         const classNames: { [key: string]: string } = {
             'clasticas': 'Clásticas',
             'quimicas': 'Químicas',
-            'bioquimicas': 'Bioquímicas'
+            'organicas': 'Orgánicas'
         }
         return classNames[className] || className
     }
@@ -42,7 +42,7 @@ export default function RockClassification() {
                         { id: 'all', label: 'Ver Todas', icon: 'grid_view' },
                         { id: 'clasticas', label: 'Clásticas', icon: 'landscape' },
                         { id: 'quimicas', label: 'Químicas', icon: 'science' },
-                        { id: 'bioquimicas', label: 'Bioquímicas', icon: 'eco' }
+                        { id: 'organicas', label: 'Orgánicas', icon: 'forest' }
                     ].map((tab) => (
                         <button
                             key={tab.id}
@@ -80,8 +80,11 @@ export default function RockClassification() {
                         if (t.includes('quimicas') || t.includes('química') || t.includes('evaporita')) return {
                             border: 'border-cyan-500', bg: 'bg-cyan-50', text: 'text-cyan-900', icon: 'science', badge: 'bg-cyan-200'
                         };
+                        if (t.includes('organicas') || t.includes('orgánica')) return {
+                            border: 'border-stone-500', bg: 'bg-stone-50', text: 'text-stone-900', icon: 'forest', badge: 'bg-stone-200'
+                        };
                         return {
-                            border: 'border-lime-500', bg: 'bg-lime-50', text: 'text-lime-900', icon: 'eco', badge: 'bg-lime-200'
+                            border: 'border-gray-500', bg: 'bg-gray-50', text: 'text-gray-900', icon: 'help', badge: 'bg-gray-200'
                         };
                     };
 

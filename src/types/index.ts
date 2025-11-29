@@ -49,6 +49,7 @@ export interface RockType {
   origin: string
   chemicalComposition: string
   description: string
+  image?: string
 }
 
 // Tipos para el estado de la aplicación

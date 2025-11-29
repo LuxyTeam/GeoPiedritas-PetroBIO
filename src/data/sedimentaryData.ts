@@ -4,79 +4,122 @@ export const rockTypes: RockType[] = [
     {
         class: 'clasticas',
         rock: 'Arcosa',
-        origin: 'Detrítica; deriva de la erosión y transporte de granitos.',
+        origin: 'Deriva de la erosión y transporte de granitos.',
         chemicalComposition: 'Rica en feldespato potásico (KAlSi₃O₈) y cuarzo (SiO₂).',
-        description: 'Es una arenisca con >25% de feldespato. Indica un transporte corto y erosión rápida de rocas félsicas. Tiende a tener tonos rojizos/rosas porque el feldespato se oxida.'
+        description: 'Es una arenisca con >25% de feldespato. Indica un transporte corto y erosión rápida de rocas félsicas. Tiende a tener tonos rojizos/rosas porque el feldespato se oxida.',
+        image: '/images/rocks/arcosa.png'
     },
     {
         class: 'clasticas',
         rock: 'Arenisca',
         origin: 'Compactación y cementación de granos de arena.',
-        chemicalComposition: 'Mayormente Cuarzo (SiO₂) a veces Feldespatos.',
-        description: 'Es una roca común y permeable. Su color varía según el cemento (calcita, sílice, arcillas, óxidos).'
+        chemicalComposition: 'Mayormente cuarzo (SiO₂); a veces feldespatos.',
+        description: 'Es una roca común y permeable. Su color varía según el cemento (calcita, sílice, arcillas, óxidos).',
+        image: '/images/rocks/arenisca.png'
     },
     {
         class: 'clasticas',
         rock: 'Grauvaca',
-        origin: 'Deposición rápida en cuencas oceánicas profundas.',
-        chemicalComposition: 'Cuarzo, feldespato y alto contenido de matriz arcillosa.',
-        description: 'Arenisca "sucia" o "gris". Textura inmadura, indica transporte y deposición muy rápidos.'
+        origin: 'Depósitos rápidos de arenas mal clasificadas, generalmente por corrientes de turbidez.',
+        chemicalComposition: 'Sílice (SiO₂): 55-70%; Alúmina (Al₂O₃): 10-20%.',
+        description: 'Arenisca "sucia" o "gris". Textura inmadura, indica transporte y deposición muy rápidos.',
+        image: '/images/rocks/grauvaca.png'
     },
     {
         class: 'clasticas',
         rock: 'Pudinga',
-        origin: 'Cementación de fragmentos de roca redondeados (>2 mm).',
-        chemicalComposition: 'Varía, pero incluye cuarzo, feldespato y trozos de roca.',
-        description: 'Se diferencia de la Brecha por tener clastos redondeados, lo que indica un transporte más largo.'
+        origin: 'Acumulación de cantos redondeados transportados por ríos o zonas costeras de alta energía.',
+        chemicalComposition: 'SiO₂ (sílice): 65-90%; Al₂O₃: 5-15%.',
+        description: 'Se diferencia de la Brecha por tener clastos redondeados, lo que indica un transporte más largo.',
+        image: '/images/rocks/pudinga.png'
     },
     {
-        class: 'quimicas',
+        class: 'clasticas',
         rock: 'Brecha',
-        origin: 'Cementación de fragmentos de roca angulares (>2 mm).',
-        chemicalComposition: 'Similar a la Pudinga, pero con fragmentos menos meteorizados.',
-        description: 'Clastos angulares (no redondeados), lo que sugiere un transporte corto o nulo antes de la deposición.'
+        origin: 'Se forma a partir de fragmentos angulosos que se acumulan cerca de su fuente por derrumbes o fallas.',
+        chemicalComposition: 'SiO₂ 60-90%; Al₂O₃: 5-15%.',
+        description: 'Clastos angulares (no redondeados), lo que sugiere un transporte corto o nulo antes de la deposición.',
+        image: '/images/rocks/brecha.png'
     },
     {
         class: 'quimicas',
         rock: 'Yeso',
-        origin: 'Precipitación de lagos o mares poco profundos (Evaporita).',
+        origin: 'Precipitación química en lagos o mares poco profundos por evaporación.',
         chemicalComposition: 'Sulfato de calcio hidratado (CaSO₄·2H₂O).',
-        description: 'Una roca evaporítica blanda, se raya con la uña. Forma cristales claros o fibrosos.'
+        description: 'Una roca evaporítica blanda, se raya con la uña. Forma cristales claros o fibrosos.',
+        image: '/images/rocks/yeso.png'
     },
     {
         class: 'quimicas',
         rock: 'Fosforita',
         origin: 'Precipitación química en ambientes marinos.',
-        chemicalComposition: 'Fosfato de calcio (Ca₃(PO₄)₂/Ca₅(PO₄)₃(OH)).',
-        description: 'Es rica en fósforo y de gran importancia para fertilizantes. Se forma en donde hay alta productividad biológica.'
+        chemicalComposition: 'Fosfato de calcio (Ca₅(PO₄)₃(F,Cl,OH)).',
+        description: 'Es rica en fósforo y de gran importancia para fertilizantes. Se forma en donde hay alta productividad biológica.',
+        image: '/images/rocks/fosforita.png'
     },
     {
-        class: 'bioquimicas',
+        class: 'quimicas',
+        rock: 'Dolomía',
+        origin: 'Cuando una caliza es modificada por aguas ricas en magnesio (dolomitización).',
+        chemicalComposition: 'CaO: 28-32%; MgO: 18-22%; CO₂: 45-48%.',
+        description: 'Reacciona débilmente con HCl. Menos reactiva que la caliza. Se forma por alteración metasomática.',
+        image: '/images/rocks/dolomia.png'
+    },
+    {
+        class: 'quimicas',
         rock: 'Caliza',
-        origin: 'Bioquímica (restos de organismos marinos) o Química (precipitación de CaCO₃).',
-        chemicalComposition: 'Carbonato de calcio (CaCO₃).',
-        description: 'Reacciona con ácido clorhídrico. Es la roca sedimentaria química más abundante. Puede contener abundantes fósiles.'
+        origin: 'Precipitación de carbonato de calcio o aporte de restos biológicos marinos.',
+        chemicalComposition: 'Carbonato de calcio (CaCO₃), usualmente calcita.',
+        description: 'Reacciona con ácido clorhídrico. Es la roca sedimentaria química más abundante. Puede contener abundantes fósiles.',
+        image: '/images/rocks/caliza.png'
     },
     {
-        class: 'bioquimicas',
-        rock: 'Dolomita',
-        origin: 'Alteración química de la caliza o precipitación directa (ambientes lagunares).',
-        chemicalComposition: 'Carbonato de calcio y magnesio (CaMg(CO₃)₂).',
-        description: 'Reacciona débilmente con HCl. Menos reactiva que la caliza. Se forma por alteración metasomática.'
+        class: 'quimicas',
+        rock: 'Sal Gema',
+        origin: 'Resulta de la evaporación intensa de cuerpos de agua salada.',
+        chemicalComposition: 'Cloruro de sodio (NaCl).',
+        description: 'Roca sedimentaria evaporítica formada por halita.',
+        image: '/images/rocks/halita.png'
     },
     {
-        class: 'bioquimicas',
-        rock: 'Caliza Coralina',
-        origin: 'Acumulación de esqueletos de corales y organismos marinos.',
-        chemicalComposition: 'Principalmente CaCO₃ (calcita).',
-        description: 'Contiene fragmentos de coral y caparazones. Indica ambientes marinos cálidos y poco profundos.'
+        class: 'organicas',
+        rock: 'Turba',
+        origin: 'Acumulación de restos vegetales parcialmente descompuestos en pantanos.',
+        chemicalComposition: 'Alta en carbono (C) y materia orgánica.',
+        description: 'Etapa inicial de la formación del carbón.',
+        image: '/images/rocks/turba.png'
     },
     {
-        class: 'bioquimicas',
-        rock: 'Diatomita',
-        origin: 'Acumulación de esqueletos silíceos de diatomeas.',
-        chemicalComposition: 'Sílice (SiO₂) de origen orgánico.',
-        description: 'Roca muy porosa y ligera. Se usa como filtro y abrasivo. Indica alta productividad en aguas marinas.'
+        class: 'organicas',
+        rock: 'Lignito',
+        origin: 'Transformación de la turba bajo presión y calor moderado.',
+        chemicalComposition: 'Alto contenido de carbono (25-35%).',
+        description: 'Carbón mineral de color negro o pardo.',
+        image: '/images/rocks/lignita.png'
+    },
+    {
+        class: 'organicas',
+        rock: 'Hulla',
+        origin: 'Compactación y transformación de materia vegetal en zonas pantanosas.',
+        chemicalComposition: 'Carbono (C): 75-85%; Hidrógeno (H): 4-6%.',
+        description: 'Roca sedimentaria orgánica rica en carbono.',
+        image: '/images/rocks/hulla.png'
+    },
+    {
+        class: 'organicas',
+        rock: 'Antracita',
+        origin: 'Carbón previo sometido a mayor presión y temperatura.',
+        chemicalComposition: 'Carbono (C): 86-95%.',
+        description: 'El carbón mineral de más alto rango y contenido de carbono.',
+        image: '/images/rocks/antracita.png'
+    },
+    {
+        class: 'organicas',
+        rock: 'Asfalto',
+        origin: 'Alteración natural de hidrocarburos que migran y quedan atrapados.',
+        chemicalComposition: 'Carbono (C): 80-88%; Hidrógeno (H): 8-11%.',
+        description: 'Hidrocarburo sólido o semisólido natural.',
+        image: '/images/rocks/asfalto.png'
     }
 ]
 

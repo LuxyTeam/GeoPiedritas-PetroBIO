@@ -38,14 +38,8 @@ export default function ContentSections() {
   return (
     <div ref={sectionsRef} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <IntroSection />
-      <SedimentationCycle />
-      <RockClassification />
-      <Diagenesis />
-      <Environments />
-      <Characteristics />
-      <DetailedTable />
 
-      {/* SECCIÓN 8: Compuestos Químicos */}
+      {/* SECCIÓN 2: Compuestos Químicos */}
       <section id="compuestos" className="section-box p-6 sm:p-8 lg:p-12 mb-12 sm:mb-16 scroll-mt-24 opacity-0 transition-all duration-700">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brown-base mb-4 sm:mb-6">Compuestos Químicos</h2>
@@ -59,6 +53,13 @@ export default function ContentSections() {
         {/* Contenedor de compuestos */}
         <Compounds3D />
       </section>
+
+      <SedimentationCycle />
+      <Environments />
+      <Diagenesis />
+      <Characteristics />
+      <RockClassification />
+      <DetailedTable />
     </div>
   )
 }

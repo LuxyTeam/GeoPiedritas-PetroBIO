@@ -15,17 +15,17 @@
   --color-ocre-base: #d19762;
   --color-ocre-dark: #c08752;
   --color-ocre-light: #e8a87c;
-  
+
   /* Transiciones optimizadas */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.6s ease;
-  
+
   /* Sombras mejoradas */
-  --shadow-soft: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-medium: 0 6px 20px rgba(0,0,0,0.12);
-  --shadow-strong: 0 8px 25px rgba(0,0,0,0.15);
-  --shadow-hover: 0 12px 30px rgba(0,0,0,0.2);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Tipografía y estilos base mejorados */
@@ -53,7 +53,12 @@ body {
 }
 
 /* Jerarquía tipográfica mejorada */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -129,7 +134,8 @@ a:focus {
 }
 
 /* Listas mejoradas */
-ul, ol {
+ul,
+ol {
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -141,12 +147,14 @@ li {
 }
 
 /* Texto enfatizado */
-strong, b {
+strong,
+b {
   font-weight: 600;
   color: var(--color-brown-base);
 }
 
-em, i {
+em,
+i {
   font-style: italic;
   color: var(--color-brown-base);
 }
@@ -223,7 +231,9 @@ tr:hover {
 }
 
 /* Formularios mejorados */
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
   font-size: 1rem;
   padding: 0.75rem 1rem;
@@ -234,7 +244,9 @@ input, textarea, select {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: var(--color-ocre-base);
   box-shadow: 0 0 0 3px rgba(209, 151, 98, 0.1);
@@ -257,12 +269,29 @@ hr {
 }
 
 /* Utilidades de espaciado */
-.space-y-1 > * + * { margin-top: 0.25rem; }
-.space-y-2 > * + * { margin-top: 0.5rem; }
-.space-y-3 > * + * { margin-top: 0.75rem; }
-.space-y-4 > * + * { margin-top: 1rem; }
-.space-y-6 > * + * { margin-top: 1.5rem; }
-.space-y-8 > * + * { margin-top: 2rem; }
+.space-y-1>*+* {
+  margin-top: 0.25rem;
+}
+
+.space-y-2>*+* {
+  margin-top: 0.5rem;
+}
+
+.space-y-3>*+* {
+  margin-top: 0.75rem;
+}
+
+.space-y-4>*+* {
+  margin-top: 1rem;
+}
+
+.space-y-6>*+* {
+  margin-top: 1.5rem;
+}
+
+.space-y-8>*+* {
+  margin-top: 2rem;
+}
 
 /* Contenedores optimizados */
 .container {
@@ -279,7 +308,7 @@ hr {
   .container {
     padding: 0 2rem;
   }
-  
+
   .section {
     padding: 6rem 0;
   }
@@ -289,7 +318,7 @@ hr {
   .container {
     padding: 0 3rem;
   }
-  
+
   .section {
     padding: 8rem 0;
   }
@@ -317,6 +346,7 @@ hr {
 
 /* Animaciones de reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -385,10 +415,13 @@ hr {
 
 /* Nuevas animaciones personalizadas */
 @keyframes bounce-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(-25%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
+
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -400,6 +433,7 @@ hr {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -415,13 +449,33 @@ hr {
 }
 
 /* Delay utilities */
-.delay-200 { animation-delay: 200ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-800 { animation-delay: 800ms; }
-.delay-1000 { animation-delay: 1000ms; }
-.delay-1500 { animation-delay: 1500ms; }
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.delay-1500 {
+  animation-delay: 1500ms;
+}
 
 /* Clases utilitarias personalizadas */
 .nav-link {
@@ -503,14 +557,14 @@ hr {
 .feature-item {
   @apply flex items-start mb-6 p-6 rounded-xl;
   background: linear-gradient(135deg, var(--color-beige-light) 0%, var(--color-beige-card) 100%);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border-left: 4px solid var(--color-ocre-base);
 }
 
 .feature-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .feature-icon {
@@ -555,6 +609,7 @@ hr {
     transform: translateX(100%) scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: translateX(0) scale(1);
     opacity: 1;
@@ -572,6 +627,7 @@ hr {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -584,7 +640,7 @@ hr {
   border-radius: 1.5rem;
   max-width: 80%;
   word-wrap: break-word;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .message-bot .message-bubble {
@@ -611,8 +667,13 @@ hr {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Animaciones de entrada mejoradas */
@@ -625,6 +686,7 @@ hr {
     opacity: 0;
     transform: translateY(30px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -637,6 +699,7 @@ hr {
     opacity: 0;
     transform: translateX(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -648,6 +711,7 @@ hr {
     opacity: 0;
     transform: translateX(100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -659,6 +723,7 @@ hr {
     opacity: 0;
     transform: translateY(60px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -670,6 +735,7 @@ hr {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -678,18 +744,24 @@ hr {
 
 /* Animaciones de hover mejoradas */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
 @keyframes glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(209, 151, 98, 0.2);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(209, 151, 98, 0.4);
   }
@@ -699,6 +771,7 @@ hr {
   0% {
     background-position: -200% center;
   }
+
   100% {
     background-position: 200% center;
   }
@@ -709,27 +782,35 @@ hr {
   0% {
     transform: scale(1);
   }
+
   14% {
     transform: scale(1.1);
   }
+
   28% {
     transform: scale(1);
   }
+
   42% {
     transform: scale(1.1);
   }
+
   70% {
     transform: scale(1);
   }
 }
 
 @keyframes wiggle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(-3deg);
   }
+
   75% {
     transform: rotate(3deg);
   }
@@ -769,23 +850,29 @@ hr {
 }
 
 @keyframes dots {
-  0%, 20% {
+
+  0%,
+  20% {
     color: rgba(0, 0, 0, 0);
     text-shadow: .25em 0 0 rgba(0, 0, 0, 0),
-                 .5em 0 0 rgba(0, 0, 0, 0);
+      .5em 0 0 rgba(0, 0, 0, 0);
   }
+
   40% {
     color: currentColor;
     text-shadow: .25em 0 0 rgba(0, 0, 0, 0),
-                 .5em 0 0 rgba(0, 0, 0, 0);
+      .5em 0 0 rgba(0, 0, 0, 0);
   }
+
   60% {
     text-shadow: .25em 0 0 currentColor,
-                 .5em 0 0 rgba(0, 0, 0, 0);
+      .5em 0 0 rgba(0, 0, 0, 0);
   }
-  80%, 100% {
+
+  80%,
+  100% {
     text-shadow: .25em 0 0 currentColor,
-                 .5em 0 0 currentColor;
+      .5em 0 0 currentColor;
   }
 }
 
@@ -795,9 +882,11 @@ hr {
     transform: translateY(0) rotate(0deg);
     opacity: 0.7;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: translateY(-100px) rotate(180deg);
     opacity: 0;
@@ -829,9 +918,11 @@ hr {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -883,24 +974,70 @@ hr {
 }
 
 /* Delays de animación */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-800 { animation-delay: 800ms; }
-.delay-900 { animation-delay: 900ms; }
-.delay-1000 { animation-delay: 1000ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+.delay-900 {
+  animation-delay: 900ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
 
 /* Duraciones personalizadas */
-.duration-100 { animation-duration: 100ms; }
-.duration-200 { animation-duration: 200ms; }
-.duration-300 { animation-duration: 300ms; }
-.duration-500 { animation-duration: 500ms; }
-.duration-700 { animation-duration: 700ms; }
-.duration-1000 { animation-duration: 1000ms; }
+.duration-100 {
+  animation-duration: 100ms;
+}
+
+.duration-200 {
+  animation-duration: 200ms;
+}
+
+.duration-300 {
+  animation-duration: 300ms;
+}
+
+.duration-500 {
+  animation-duration: 500ms;
+}
+
+.duration-700 {
+  animation-duration: 700ms;
+}
+
+.duration-1000 {
+  animation-duration: 1000ms;
+}
 
 /* Transiciones suaves mejoradas */
 .transition-smooth {
@@ -935,6 +1072,7 @@ hr {
 
 /* Mejoras específicas para móviles */
 @media (max-width: 768px) {
+
   /* Chat modal optimizado para móviles */
   .chat-modal {
     max-width: 95%;
@@ -945,7 +1083,7 @@ hr {
     margin: 0 auto;
     border-radius: 1rem;
   }
-  
+
   /* Navegación mejorada para touch */
   .nav-link {
     min-height: 44px;
@@ -953,68 +1091,68 @@ hr {
     align-items: center;
     padding: 0.75rem 1rem;
   }
-  
+
   /* Botones más grandes para touch */
   .btn-primary {
     min-height: 48px;
     font-size: 1rem;
     padding: 0.875rem 1.5rem;
   }
-  
+
   /* Tarjetas optimizadas para móviles */
   .card-icon {
     padding: 1.25rem;
     min-height: 120px;
   }
-  
+
   /* Elementos de características en móvil */
   .feature-item {
     padding: 1.25rem;
     margin-bottom: 1rem;
   }
-  
+
   /* Secciones con mejor espaciado */
   .section-box {
     padding: 1.5rem;
     margin-bottom: 2rem;
   }
-  
+
   /* Tipografía responsiva mejorada */
   h1 {
     font-size: 2.5rem !important;
     line-height: 1.2;
   }
-  
+
   h2 {
     font-size: 2rem !important;
     line-height: 1.3;
   }
-  
+
   h3 {
     font-size: 1.5rem !important;
   }
-  
+
   p {
     font-size: 1rem !important;
     line-height: 1.6;
   }
-  
+
   /* Grid responsive optimizado */
   .grid {
     gap: 1rem;
   }
-  
+
   /* Tablas responsivas */
   .overflow-x-auto {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  
+
   .overflow-x-auto::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Modal de chat móvil */
   .chat-modal {
     max-width: 100% !important;
@@ -1026,18 +1164,18 @@ hr {
     border-radius: 0;
     position: fixed !important;
   }
-  
+
   /* Navegación sticky en móvil */
   .header-bg {
     padding: 0.5rem 1rem;
   }
-  
+
   /* Mejoras adicionales para pantallas pequeñas */
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   /* Espaciado mejorado para elementos interactivos */
   button,
   .card-icon,
@@ -1047,105 +1185,106 @@ hr {
 }
 
 @media (max-width: 640px) {
+
   /* Espaciado ultra-compacto para móviles pequeños */
   .section-box {
     padding: 1rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .feature-item {
     padding: 1rem;
     flex-direction: column;
     text-align: center;
   }
-  
+
   /* Hero section ultra optimizado */
   .min-h-screen {
     min-height: 100vh;
     padding: 2rem 1rem;
   }
-  
+
   /* Botones más compactos */
   .btn-primary {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
   }
-  
+
   /* Tarjetas en grid compacto */
   .grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
-  
+
   .grid-cols-3 {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
-  
+
   .grid-cols-4 {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
-  
+
   .grid-cols-5 {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
-  
+
   /* Textos más legibles en móvil */
   .text-4xl {
     font-size: 2rem !important;
   }
-  
+
   .text-5xl {
     font-size: 2.5rem !important;
   }
-  
+
   .text-6xl {
     font-size: 3rem !important;
   }
-  
+
   .text-lg {
     font-size: 1.125rem !important;
   }
-  
+
   .text-xl {
     font-size: 1.25rem !important;
   }
-  
+
   /* Iconos más grandes para touch */
   .material-symbols-outlined {
     font-size: 1.5rem !important;
   }
-  
+
   /* Padding y margin ajustados */
   .p-4 {
     padding: 1rem !important;
   }
-  
+
   .p-6 {
     padding: 1.25rem !important;
   }
-  
+
   .p-8 {
     padding: 1.5rem !important;
   }
-  
+
   .mb-12 {
     margin-bottom: 2rem !important;
   }
-  
+
   /* Navegación móvil mejorada */
   .md\\:hidden {
     display: block !important;
   }
-  
+
   /* Ocultar elementos no esenciales en móvil */
   .hidden-mobile {
     display: none !important;
   }
-  
+
   /* Indicadores de scroll más visibles */
   .scroll-indicator {
     opacity: 0.8;
@@ -1155,28 +1294,29 @@ hr {
 
 /* Mejoras de accesibilidad táctil */
 @media (hover: none) and (pointer: coarse) {
+
   /* Eliminar efectos hover en dispositivos táctiles */
   .hover-lift:hover {
     transform: none;
     box-shadow: none;
   }
-  
+
   /* Aumentar contraste en táctil */
   .card-icon {
     border-width: 2px;
   }
-  
+
   /* Efectos activos para táctil */
   .btn-primary:active {
     transform: scale(0.95);
     transition: transform 0.1s;
   }
-  
+
   .card-icon:active {
     transform: scale(0.98);
     transition: transform 0.1s;
   }
-  
+
   /* Navegación táctil optimizada */
   .nav-link:active {
     background-color: rgba(209, 151, 98, 0.1);
@@ -1189,39 +1329,39 @@ hr {
   .min-h-screen {
     padding: 1.5rem 0.75rem;
   }
-  
+
   .text-4xl {
     font-size: 1.75rem !important;
   }
-  
+
   .text-5xl {
     font-size: 2.25rem !important;
   }
-  
+
   .p-6 {
     padding: 1rem !important;
   }
-  
+
   .p-8 {
     padding: 1.25rem !important;
   }
-  
+
   .p-10 {
     padding: 1.5rem !important;
   }
-  
+
   .p-12 {
     padding: 2rem !important;
   }
-  
+
   .mb-12 {
     margin-bottom: 2rem !important;
   }
-  
+
   .mb-16 {
     margin-bottom: 2.5rem !important;
   }
-  
+
   /* Grid de una columna en pantallas muy pequeñas */
   .grid-cols-2,
   .grid-cols-3,
@@ -1229,18 +1369,18 @@ hr {
   .grid-cols-5 {
     grid-template-columns: 1fr;
   }
-  
+
   /* Ajustes de botones para móviles */
   .btn-primary {
     padding: 0.75rem 1.5rem !important;
     font-size: 0.9rem !important;
   }
-  
+
   /* Ajustes de tarjetas para móviles */
   .card-icon {
     padding: 1rem !important;
   }
-  
+
   /* Ajustes de navegación para móviles */
   .navigation-mobile {
     padding: 0.5rem !important;
@@ -1252,11 +1392,11 @@ hr {
   .grid-cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .grid-cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .grid-cols-5 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1264,6 +1404,7 @@ hr {
 
 /* Optimización específica para fondos en móviles */
 @media (max-width: 768px) {
+
   /* Fondo de sección hero optimizado para móviles */
   section[class*="min-h-screen"] {
     background-color: var(--color-beige-light) !important;
@@ -1274,14 +1415,14 @@ hr {
     background-size: 100% 100%;
     background-attachment: scroll;
   }
-  
+
   /* Imagen de fondo más sutil en móviles */
   img[alt="Fondo Geológico"] {
     opacity: 0.15 !important;
     object-position: center center;
     transform: scale(1.1);
   }
-  
+
   /* Gradiente de overlay mejorado para móviles */
   section[class*="min-h-screen"]::before {
     content: '';
@@ -1290,36 +1431,34 @@ hr {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      180deg,
-      var(--color-beige-light) 0%,
-      var(--color-beige-light) 30%,
-      var(--color-beige-base) 70%,
-      var(--color-beige-light) 100%
-    );
+    background: linear-gradient(180deg,
+        var(--color-beige-light) 0%,
+        var(--color-beige-light) 30%,
+        var(--color-beige-base) 70%,
+        var(--color-beige-light) 100%);
     opacity: 0.95;
     z-index: 1;
   }
-  
+
   /* Contenido con mayor contraste en móviles */
-  section[class*="min-h-screen"] > div:last-child {
+  section[class*="min-h-screen"]>div:last-child {
     position: relative;
     z-index: 2;
   }
-  
+
   /* Textos con mayor contraste en móviles */
   section[class*="min-h-screen"] h1,
   section[class*="min-h-screen"] p {
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
   }
-  
+
   /* Tarjetas de navegación con mejor contraste */
   .bg-white\/40 {
     background-color: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(8px);
     border: 1px solid rgba(209, 151, 98, 0.2);
   }
-  
+
   .bg-white\/40:hover {
     background-color: rgba(255, 255, 255, 0.9) !important;
     border-color: var(--color-ocre-base);
@@ -1328,23 +1467,22 @@ hr {
 
 /* Optimización ultra para pantallas muy pequeñas */
 @media (max-width: 480px) {
+
   /* Fondo sólido para pantallas muy pequeñas */
   section[class*="min-h-screen"] {
     background: var(--color-beige-light) !important;
   }
-  
+
   /* Eliminar imagen de fondo en pantallas muy pequeñas */
   img[alt="Fondo Geológico"] {
     display: none !important;
   }
-  
+
   /* Gradiente más suave */
   section[class*="min-h-screen"]::before {
-    background: linear-gradient(
-      180deg,
-      var(--color-beige-light) 0%,
-      var(--color-beige-card) 100%
-    );
+    background: linear-gradient(180deg,
+        var(--color-beige-light) 0%,
+        var(--color-beige-card) 100%);
     opacity: 1;
   }
 }
@@ -1370,6 +1508,7 @@ button,
     opacity: 0;
     transform: scale(0.95) translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1382,12 +1521,13 @@ button,
 
 /* Animaciones específicas para móviles */
 @media (prefers-reduced-motion: reduce) {
+
   .animate-bounce,
   .animate-pulse,
   .animate-spin {
     animation: none !important;
   }
-  
+
   .transition-all,
   .transition-transform,
   .transition-colors {
@@ -1401,11 +1541,193 @@ button,
     min-height: 100vh;
     padding: 1rem;
   }
-  
+
   .header-bg {
     padding: 0.5rem 1rem;
   }
-  
+
+  .hero-content {
+    padding: 1rem 0;
+  }
+}
+
+/* Utilidades de scroll */
+.scroll-mt-24 {
+  scroll-margin-top: 6rem;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible para accesibilidad */
+.focus-visible:focus {}
+
+
+/* Optimizaciones específicas para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Optimización específica para fondos en móviles */
+@media (max-width: 768px) {
+
+  /* Fondo de sección hero optimizado para móviles */
+  section[class*="min-h-screen"] {
+    background-color: var(--color-beige-light) !important;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(209, 151, 98, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(192, 135, 82, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, var(--color-beige-light) 0%, var(--color-beige-base) 100%);
+    background-size: 100% 100%;
+    background-attachment: scroll;
+  }
+
+  /* Imagen de fondo más sutil en móviles */
+  img[alt="Fondo Geológico"] {
+    opacity: 0.15 !important;
+    object-position: center center;
+    transform: scale(1.1);
+  }
+
+  /* Gradiente de overlay mejorado para móviles */
+  section[class*="min-h-screen"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg,
+        var(--color-beige-light) 0%,
+        var(--color-beige-light) 30%,
+        var(--color-beige-base) 70%,
+        var(--color-beige-light) 100%);
+    opacity: 0.95;
+    z-index: 1;
+  }
+
+  /* Contenido con mayor contraste en móviles */
+  section[class*="min-h-screen"]>div:last-child {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Textos con mayor contraste en móviles */
+  section[class*="min-h-screen"] h1,
+  section[class*="min-h-screen"] p {
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  }
+
+  /* Tarjetas de navegación con mejor contraste */
+  .bg-white\/40 {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(209, 151, 98, 0.2);
+  }
+
+  .bg-white\/40:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-color: var(--color-ocre-base);
+  }
+}
+
+/* Optimización ultra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+
+  /* Fondo sólido para pantallas muy pequeñas */
+  section[class*="min-h-screen"] {
+    background: var(--color-beige-light) !important;
+  }
+
+  /* Eliminar imagen de fondo en pantallas muy pequeñas */
+  img[alt="Fondo Geológico"] {
+    display: none !important;
+  }
+
+  /* Gradiente más suave */
+  section[class*="min-h-screen"]::before {
+    background: linear-gradient(180deg,
+        var(--color-beige-light) 0%,
+        var(--color-beige-card) 100%);
+    opacity: 1;
+  }
+}
+
+/* Mejoras de accesibilidad para todos los dispositivos */
+.focus-visible:focus {
+  outline: 2px solid var(--color-ocre-base);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Transiciones suaves para todos los elementos interactivos */
+button,
+.card-icon,
+.feature-item,
+.section-box {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efectos de entrada para elementos */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.fade-in-scale {
+  animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animaciones específicas para móviles */
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-bounce,
+  .animate-pulse,
+  .animate-spin {
+    animation: none !important;
+  }
+
+  .transition-all,
+  .transition-transform,
+  .transition-colors {
+    transition: none !important;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .min-h-screen {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  .header-bg {
+    padding: 0.5rem 1rem;
+  }
+
   .hero-content {
     padding: 1rem 0;
   }
@@ -1440,8 +1762,38 @@ button,
 
 /* Mejoras para impresión */
 @media print {
+
   .chat-modal,
   .chat-button {
     display: none !important;
   }
+}
+
+/* Estilos para Modelos 3D */
+.glass-control {
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.canvas-bg {
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ocre-base) transparent;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-ocre-base);
+  border-radius: 20px;
 }

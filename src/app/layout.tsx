@@ -57,6 +57,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded"
+          rel="stylesheet"
+        />
         {/* Preload critical resources */}
         <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
       </head>

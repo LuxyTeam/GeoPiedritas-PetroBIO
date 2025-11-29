@@ -8,23 +8,23 @@ const navigationGroups = [
     title: 'Básicos',
     items: [
       { id: 'que-son', label: '¿Qué son?', icon: 'help' },
+      { id: 'compuestos', label: 'Compuestos', icon: 'science' },
       { id: 'formacion', label: 'Formación', icon: 'history_edu' },
-      { id: 'tipos', label: 'Tipos', icon: 'category' },
     ],
   },
   {
     title: 'Procesos',
     items: [
-      { id: 'diagenesis', label: 'Diagénesis', icon: 'compress' },
       { id: 'ambientes', label: 'Ambientes', icon: 'terrain' },
+      { id: 'diagenesis', label: 'Diagénesis', icon: 'compress' },
     ],
   },
   {
     title: 'Detalles',
     items: [
       { id: 'caracteristicas', label: 'Características', icon: 'science' },
+      { id: 'tipos', label: 'Tipos', icon: 'category' },
       { id: 'tabla', label: 'Tabla', icon: 'table_chart' },
-      { id: 'compuestos', label: 'Compuestos', icon: 'science' },
     ],
   },
 ]
@@ -122,8 +122,8 @@ export default function Navigation({ activeSection, onSectionClick }: Navigation
                 <button
                   onClick={() => handleSectionClick(item.id)}
                   className={`w-12 h-12 rounded-xl transition-all duration-200 flex items-center justify-center transform hover:scale-105 ${activeSection === item.id
-                      ? 'bg-ocre-base text-white shadow-md' // Estilo ajustado al tema
-                      : 'text-brown-base hover:bg-ocre-light/50 hover:text-ocre-dark'
+                    ? 'bg-ocre-base text-white shadow-md' // Estilo ajustado al tema
+                    : 'text-brown-base hover:bg-ocre-light/50 hover:text-ocre-dark'
                     }`}
                   title={item.label}
                 >

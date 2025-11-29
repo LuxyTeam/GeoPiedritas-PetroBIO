@@ -9,7 +9,7 @@ export default function DetailedTable() {
         const classNames: { [key: string]: string } = {
             'clasticas': 'Clásticas',
             'quimicas': 'Químicas',
-            'bioquimicas': 'Bioquímicas'
+            'organicas': 'Orgánicas'
         }
         return classNames[className] || className
     }
@@ -29,34 +29,60 @@ export default function DetailedTable() {
                 >
                     <thead>
                         <tr className="bg-gradient-to-r from-ocre-base to-ocre-dark text-white">
-                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg">Clase</th>
-                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg">Roca</th>
-                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg">Origen</th>
-                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg">Composición</th>
-                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg hidden lg:table-cell">Descripción</th>
+                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-center font-bold text-sm sm:text-base lg:text-lg w-[15%]">Clase</th>
+                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg w-[15%]">Roca</th>
+                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-center font-bold text-sm sm:text-base lg:text-lg w-[15%]">Imagen</th>
+                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg w-[20%]">Origen</th>
+                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg w-[20%]">Composición</th>
+                            <th scope="col" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left font-bold text-sm sm:text-base lg:text-lg hidden lg:table-cell w-[15%]">Descripción</th>
                         </tr>
                     </thead>
                     <tbody>
                         {rockTypes.map((rock, index) => (
                             <tr
                                 key={rock.rock}
-                                className={`border-b border-gray-100 hover:bg-ocre-light/30 transition-all duration-300 ${index % 2 === 0 ? 'bg-gray-50/50' : 'bg-white'
+                                className={`border-b border-gray-100 hover:bg-ocre-light/30 transition-all duration-300 align-middle ${index % 2 === 0 ? 'bg-gray-50/50' : 'bg-white'
                                     }`}
                             >
-                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-                                    <span className={`inline-block px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold ${rock.class === 'clasticas'
-                                        ? 'bg-amber-100 text-amber-800'
+                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-center align-middle">
+                                    <span className={`inline-block px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm ${rock.class === 'clasticas'
+                                        ? 'bg-amber-100 text-amber-800 border border-amber-200'
                                         : rock.class === 'quimicas'
-                                            ? 'bg-cyan-100 text-cyan-800'
-                                            : 'bg-lime-100 text-lime-800'
+                                            ? 'bg-cyan-100 text-cyan-800 border border-cyan-200'
+                                            : 'bg-stone-100 text-stone-800 border border-stone-200'
                                         }`}>
                                         {getClassDisplayName(rock.class)}
                                     </span>
                                 </td>
-                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 font-bold text-brown-base text-sm sm:text-base lg:text-lg">{rock.rock}</td>
-                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-brown-base/80 leading-relaxed text-xs sm:text-sm lg:text-base hidden sm:table-cell">{rock.origin}</td>
-                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-brown-base/80 leading-relaxed text-xs sm:text-sm lg:text-base hidden lg:table-cell">{rock.chemicalComposition}</td>
-                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-brown-base/80 leading-relaxed text-xs sm:text-sm hidden xl:table-cell">{rock.description}</td>
+                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 font-bold text-brown-base text-sm sm:text-base lg:text-lg align-middle">{rock.rock}</td>
+                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 align-middle">
+                                    <div className="flex justify-center items-center">
+                                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shadow-md border-2 border-white ring-1 ring-gray-200 relative bg-gray-100 group">
+                                            {rock.image ? (
+                                                <img
+                                                    src={rock.image}
+                                                    alt={rock.rock}
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    onError={(e) => {
+                                                        const target = e.target as HTMLImageElement
+                                                        target.style.display = 'none'
+                                                        target.parentElement?.classList.add('flex', 'items-center', 'justify-center')
+                                                        if (target.parentElement) {
+                                                            target.parentElement.innerHTML = '<span class="material-symbols-outlined text-gray-400">image_not_supported</span>'
+                                                        }
+                                                    }}
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center text-gray-400">
+                                                    <span className="material-symbols-outlined">image</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-brown-base/80 leading-relaxed text-xs sm:text-sm lg:text-base hidden sm:table-cell align-middle">{rock.origin}</td>
+                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-brown-base/80 leading-relaxed text-xs sm:text-sm lg:text-base hidden lg:table-cell align-middle">{rock.chemicalComposition}</td>
+                                <td className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-brown-base/80 leading-relaxed text-xs sm:text-sm hidden xl:table-cell align-middle">{rock.description}</td>
                             </tr>
                         ))}
                     </tbody>
